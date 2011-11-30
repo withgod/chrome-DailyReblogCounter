@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Daily Reblog Counter Options</title>
+<script type="text/javascript" src="./js/jquery-1.7.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	if (localStorage['tumblr_id']) {
+		$("#tumblr_id").val(localStorage['tumblr_id']);
+	}
+	$("#save").click(function() {
+		if ($("#tumblr_id").val() != 'input your id') {
+			localStorage['tumblr_id'] = $("#tumblr_id").val();
+		} else {
+			alert("input valid tumblr id");
+		}
+	})
+});
+</script>
+</head>
+<body>
+	<h1>Daily Reblog Counter Options</h1>
+	<h2>tumblr id</h2>
+	<input type="text" id="tumblr_id" value="input your id">
+	<input type="button" id="save" value="save">
+</body>
+</html>

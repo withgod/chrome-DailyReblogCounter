@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript" src="./js/jquery-1.7.0.min.js"></script>
+<!-- BSD License http://clonedoppelganger.net/javascript/DateFormatter.html -->
+<script type="text/javascript" src="./js/DateFormatter.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+<script type="text/javascript">
+
+//initial
+doCount();
+
+//open tumblr
+chrome.browserAction.onClicked.addListener(function(tab) {
+	chrome.tabs.getAllInWindow(undefined, function(tabs) {
+		for (var i = 0, tab; tab = tabs[i]; i++) {
+			if (tab.url && /https?:\/\/www\.tumblr\.com\/.*/.test(tab.url)) {
+				chrome.tabs.update(tab.id, {selected: true});
+				return;
+			}
+		}
+		chrome.tabs.create({url: 'http://www.tumblr.com/'});
+	});
+});
+</script>
+</head>
+</html>

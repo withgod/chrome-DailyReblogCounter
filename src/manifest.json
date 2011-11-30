@@ -1,0 +1,21 @@
+{
+  "name": "Daily Reblog Counter",
+  "version": "0.0.1",
+  "description": "tumblr unofficial extension.",
+  "background_page" : "bg.html",
+  "options_page" : "option.html",
+  "icons": {
+             "16": "resource/icon_16.png",
+             "32": "resource/icon_32.png",
+             "48": "resource/icon_48.png",
+            "128": "resource/icon_128.png"
+           },
+  "browser_action": {
+           "default_icon":  "resource/icon_19.png",
+           "default_title": "Daily Reblog Counter"
+          },
+  "permissions": [
+    "tabs",
+    "http://*.tumblr.com/api/*"
+  ]
+}
